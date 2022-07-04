@@ -5,7 +5,7 @@ const auth = require('../middleware/auth');
 
 const stuffCtrl = require('../controllers/stuff');
 
-router.get('/', /* auth, */ stuffCtrl.getAllThings);
+router.get('/', auth, stuffCtrl.getAllThings);
 router.post('/', auth, stuffCtrl.createThing);
 router.get('/:id', auth, stuffCtrl.getOneThing);
 router.put('/:id', auth, stuffCtrl.modifyThing);
